@@ -1,0 +1,21 @@
+version: 1
+formatters:
+  standard:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+handlers:
+  file:
+    class: logging.FileHandler
+    formatter: standard
+    filename: app.log
+    level: INFO
+
+loggers:
+  app:
+    handlers: [file]
+    level: INFO
+    propagate: False
+
+root:
+  handlers: [file]
+  level: INFO
